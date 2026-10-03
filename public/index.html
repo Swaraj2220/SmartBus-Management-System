@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartBus Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🚌 SmartBus</h1>
+  <span>Bus Ticket Management System</span>
+</header>
+
+<main>
+  <section class="card">
+    <h2>Passenger Registration</h2>
+    <div class="grid">
+      <input id="rName" placeholder="Name">
+      <input id="rEmail" placeholder="Email">
+      <input id="rPass" type="password" placeholder="Password">
+    </div>
+    <button onclick="register()">Register</button>
+    <p id="registerMsg"></p>
+  </section>
+
+  <section class="card">
+    <h2>Login</h2>
+    <div class="grid">
+      <input id="email" placeholder="Email">
+      <input id="pass" type="password" placeholder="Password">
+    </div>
+    <button onclick="login()">Login</button>
+    <button class="secondary" onclick="adminLoginHint()">Admin Demo</button>
+    <p id="loginMsg"></p>
+  </section>
+
+  <section class="card">
+    <h2>Search Buses</h2>
+    <div class="grid">
+      <input id="from" placeholder="From (e.g. Mumbai)">
+      <input id="to" placeholder="To (e.g. Pune)">
+    </div>
+    <button onclick="searchBuses()">Search</button>
+    <div id="buses"></div>
+  </section>
+
+  <section class="card">
+    <h2>My Booking History</h2>
+    <button onclick="bookings()">View Bookings</button>
+    <div id="bookingList"></div>
+  </section>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
